@@ -1,0 +1,314 @@
+windows
+- cd
+- dir
+- mkdir
+-del/rmdir
+
+
+unix
+- cd
+- is
+- mkdir
+- rm -rf
+
+openssl sha1 texto.txt
+criptografia sha1 40 caracteres
+
+Blobs
+Trees
+Commits
+
+
+echo 'conteudo' | git hash-object --stdin
+echo 'conteudo' | openssl sha1
+
+
+
+ssh-keygen -t ed25519 -c atctecnologia@gmail.com
+
+
+
+
+Fabio@DESKTOP-0RF406J MINGW64 ~
+$ ssh-keygen -t ed25519 -C atctecnologia@gmail.com
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/Fabio/.ssh/id_ed25519):
+/c/Users/Fabio/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Fabio/.ssh/id_ed25519
+Your public key has been saved in /c/Users/Fabio/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:tVyksmaBfp1UFbQ+wIefydtzBFGbiFC/cPWc8b3a0oA atctecnologia@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|         ...oo==.|
+|       .  .=o.o+O|
+|      . o +o=+++=|
+|     .   O ++*.+.|
+|      . S =E oB..|
+|       +      == |
+|             o.+o|
+|              . o|
+|                 |
++----[SHA256]-----+
+
+Fabio@DESKTOP-0RF406J MINGW64 ~
+$ cd
+
+Fabio@DESKTOP-0RF406J MINGW64 ~
+$ cd /c/Users/Fabio/.ssh/
+
+Fabio@DESKTOP-0RF406J MINGW64 ~/.ssh
+$ ls
+id_ed25519  id_ed25519.pub  known_hosts
+
+Fabio@DESKTOP-0RF406J MINGW64 ~/.ssh
+$ cat id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP8uPIIggwIJhTOGfHeL/1OdNDT8b93/B68etDKYXszJ atctecnologia@gmail.com
+
+Fabio@DESKTOP-0RF406J MINGW64 ~/.ssh
+$
+
+ir no github e colar a chave que gerou no git
+==============================================================
+Fabio@DESKTOP-0RF406J MINGW64 ~/.ssh
+$ eval $(ssh-agent -s)
+Agent pid 1364
+
+Fabio@DESKTOP-0RF406J MINGW64 ~/.ssh
+$===========================================================
+
+Fabio@DESKTOP-0RF406J MINGW64 ~/.ssh
+$ ssh-add id_ed25519
+Enter passphrase for id_ed25519:
+Identity added: id_ed25519 (atctecnologia@gmail.com)
+
+Fabio@DESKTOP-0RF406J MINGW64 ~/.ssh
+===============================================================================================
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace
+$ mkdir livro-receitas
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace
+$ cd livro-receitas/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas
+$ git init
+Initialized empty Git repository in C:/workspace/livro-receitas/.git/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ ls
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ ls -a
+./  ../  .git/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$
+
+==========================================================================================
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git config --global user.email "atctecnologia@gmail.com"
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git config --global user.name Fcarsilva
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$
+
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git commit -m "commit inicial"
+[master (root-commit) 7ee973e] commit inicial
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 strogonoff.md
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$
+================================================================================
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   strogonoff.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ mkdir receitas
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ ls
+receitas/  strogonoff.md
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ mv strogonoff.md ./receitas/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ ls
+receitas/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ cd receitas/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas/receitas (master)
+$ ls
+strogonoff.md
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas/receitas (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    ../strogonoff.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas/receitas (master)
+$
+
+
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   receitas/strogonoff.md
+        deleted:    strogonoff.md
+
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git commit -m "cria pasta receitas, move arquivo para receitas"
+[master 17bae08] cria pasta receitas, move arquivo para receitas
+ 2 files changed, 31 insertions(+)
+ create mode 100644 receitas/strogonoff.md
+ delete mode 100644 strogonoff.md
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ ls
+receitas/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ echo > README.md
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ ls
+README.md  receitas/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ ls
+README.md  receitas/
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ gi status
+bash: gi: command not found
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git add *
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   README.md
+
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git commit -m "adciona index"
+
+
+
+
+
+
+ git status
+ git add *
+ git commit -m "Adciona receita pave"
+ git push origin master
+
+
+
+ls -a
+
+git remote -v
+
+[master 961b775] adciona index
+ 1 file changed, 9 insertions(+)
+ create mode 100644 README.md
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=true
+pull.rebase=false
+init.defaultbranch=master
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+user.name=Fcarsilva
+user.email=atctecnologia@gmail.com
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+Fabio@DESKTOP-0RF406J MINGW64 /c/workspace/livro-receitas (master)
+
+
+
+python/cpython
+
+
+
+
